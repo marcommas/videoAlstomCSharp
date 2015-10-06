@@ -25,7 +25,7 @@ namespace VideoAlstom
 
         private bool obrigatorioMatricula()
         {
-            string titulo = "";
+            /*string titulo = "";
             MessageBoxButtons botao = MessageBoxButtons.OK;
 
             if (tbMatricula.Text == "")
@@ -33,7 +33,7 @@ namespace VideoAlstom
                 MessageBox.Show("O CAMPO MATRÍCULA É OBRIGATÓRIO!", titulo, botao, MessageBoxIcon.Error);
                 this.ActiveControl = tbMatricula;
                 return false;
-            }
+            }*/
 
             return true;
         }
@@ -97,16 +97,20 @@ namespace VideoAlstom
                         break;
                 }
             }
-            
         }
 
         private void axWindowsMediaPlayer1_PlayStateChange(object sender, _WMPOCXEvents_PlayStateChangeEvent e)
         {
             if (axWindowsMediaPlayer1.playState == WMPLib.WMPPlayState.wmppsPlaying)
             {
-
                 axWindowsMediaPlayer1.fullScreen = true;
-                
+            }
+
+            if (axWindowsMediaPlayer1.playState == WMPLib.WMPPlayState.wmppsMediaEnded )
+            {
+               
+                MessageBox.Show("123123").ToString();
+                this.Hide();
             }
         }
 

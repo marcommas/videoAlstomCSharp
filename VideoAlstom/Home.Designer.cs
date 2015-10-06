@@ -167,6 +167,7 @@
             this.Controls.Add(this.btVideo8);
             this.Controls.Add(this.btVideo2);
             this.Controls.Add(this.btVideo1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Home";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
