@@ -159,6 +159,26 @@ namespace VideoAlstom
             btVideo8.Visible = false;
         }
 
+        private void usuarioBindingNavigatorSaveItem_Click(object sender, EventArgs e)
+        {
+            this.Validate();
+            this.usuarioBindingSource.EndEdit();
+            this.tableAdapterManager.UpdateAll(this.alstomvideoDataSet);
+
+        }
+
+        private void Home_Load(object sender, EventArgs e)
+        {
+            // TODO: esta linha de código carrega dados na tabela 'alstomvideoDataSet.usuario'. Você pode movê-la ou removê-la conforme necessário.
+            this.usuarioTableAdapter.Fill(this.alstomvideoDataSet.usuario);
+
+        }
+
+        private void usuarioDataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
         
    
 

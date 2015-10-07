@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Drawing.Printing;
 using WMPLib;
 using AxWMPLib;
 
@@ -16,6 +17,9 @@ namespace VideoAlstom
     {
 
         private int idVideo;
+
+        private AxWindowsMediaPlayer _player;
+      
 
         public Login(int idVideo)
         {
@@ -101,19 +105,93 @@ namespace VideoAlstom
 
         private void axWindowsMediaPlayer1_PlayStateChange(object sender, _WMPOCXEvents_PlayStateChangeEvent e)
         {
+            //QUANDO O VIDEO ESTIVER RODANDO
             if (axWindowsMediaPlayer1.playState == WMPLib.WMPPlayState.wmppsPlaying)
             {
-                axWindowsMediaPlayer1.fullScreen = true;
+                //axWindowsMediaPlayer1.fullScreen = true;
+                //_player.uiMode = "none";
+                //axWindowsMediaPlayer1.uiMode = "none";
+                //axWindowsMediaPlayer1.settings.volume = 100;
+                  
             }
 
+            //QUANDO O VIDEO ACABAR
             if (axWindowsMediaPlayer1.playState == WMPLib.WMPPlayState.wmppsMediaEnded )
             {
                
-                MessageBox.Show("123123").ToString();
+                //IMPRIME 
+                PrintDocument document = new PrintDocument();
+                document.PrintPage += new PrintPageEventHandler(impressaoConf);
+                document.Print();
+
+
                 this.Hide();
             }
         }
 
+        private void impressaoConf (object sender, PrintPageEventArgs e)
+        {
+            Graphics g = e.Graphics;
+            SolidBrush Brush = new SolidBrush(Color.Black);
+            Font FonteArialBlack = new System.Drawing.Font("Arial Black", 11);
+            Font FonteArial = new System.Drawing.Font("Arial", 11);
+
+            //CRIA LINHA PONTILHADA
+            float[] dashValues = { 5, 5, 5, 5 };
+            Pen blackPen = new Pen(Color.Black, 1);
+            blackPen.DashPattern = dashValues;
+
+            //INFORMAÇÕES DO ALUNO
+            g.DrawString("Obrigado por assistir!", FonteArialBlack, Brushes.Blue, 0, 0);
+
+            g.DrawString("Nome: ", FonteArialBlack, Brushes.Blue, 0, 20);
+            //g.DrawLine(new Pen(Brushes.Black, 3), new Point(0, 85), new Point(830, 85));
+
+            //DEPENDENDO DO VIDEO SERÁ UMA IMPRESSÃO DIFERENTE
+            switch (idVideo)
+            {
+                case 1:
+                    g.DrawString("Video: Video1", FonteArialBlack, Brushes.Blue, 0, 40);
+                    break;
+
+                case 2:
+                    g.DrawString("Video: Video2", FonteArialBlack, Brushes.Blue, 0, 40);
+                    break;
+
+                case 3:
+                    g.DrawString("Video: Video3", FonteArialBlack, Brushes.Blue, 0, 40);
+                    break;
+
+                case 4:
+                    g.DrawString("Video: Video4", FonteArialBlack, Brushes.Blue, 0, 40);
+                    break;
+
+                case 5:
+                    g.DrawString("Video: Video5", FonteArialBlack, Brushes.Blue, 0, 40);
+                    break;
+
+                case 6:
+                    g.DrawString("Video: Video6", FonteArialBlack, Brushes.Blue, 0, 40);
+                    break;
+
+                case 7:
+                    g.DrawString("Video: Video7", FonteArialBlack, Brushes.Blue, 0, 40);
+                    break;
+
+                case 8:
+                    g.DrawString("Video: Video8", FonteArialBlack, Brushes.Blue, 0, 40);
+                    break;
+
+                case 9:
+                    g.DrawString("Video: Video9", FonteArialBlack, Brushes.Blue, 0, 40);
+                    break;
+
+                case 10:
+                    g.DrawString("Video: Video10", FonteArialBlack, Brushes.Blue, 0, 40);
+                    break;
+            }
+            
+        }
 
 
 
