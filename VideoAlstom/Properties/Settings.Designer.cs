@@ -33,5 +33,25 @@ namespace VideoAlstom.Properties {
                 return ((string)(this["alstomvideoConnectionString"]));
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=|DataDirectory|\\alstomvideo.sdf")]
+        public string alstomvideoConnectionString1 {
+            get {
+                return ((string)(this["alstomvideoConnectionString1"]));
+            }
+        }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=|DataDirectory|\\alstomdb.sdf")]
+        public string alstomdbConnectionString {
+            get {
+                return ((string)(this["alstomdbConnectionString"]));
+            }
+        }
     }
 }

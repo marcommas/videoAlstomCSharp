@@ -63,6 +63,16 @@ namespace VideoAlstom.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Browser_fundo_alstom {
+            get {
+                object obj = ResourceManager.GetObject("Browser fundo alstom", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap video2 {
             get {
                 object obj = ResourceManager.GetObject("video2", resourceCulture);

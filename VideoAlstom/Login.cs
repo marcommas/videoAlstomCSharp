@@ -11,15 +11,18 @@ using System.Drawing.Printing;
 using WMPLib;
 using AxWMPLib;
 
+using System.Data.SqlClient;
+
 namespace VideoAlstom
 {
     public partial class Login : Form
     {
 
-        private int idVideo;
+        private int idVideo, id_alps;
+        string sql;
 
-        private AxWindowsMediaPlayer _player;
-      
+
+        private DataTable dtSelect;
 
         public Login(int idVideo)
         {
@@ -27,46 +30,84 @@ namespace VideoAlstom
             this.idVideo = idVideo;
         }
 
+
+        private void Gravar(int id, string de_nome)
+        {
+            try
+            {
+                Dados objDados = new Dados();
+                objDados.Gravar(id, de_nome);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Ocorreu um erro");
+            }
+
+        }
+
+
         private bool obrigatorioMatricula()
         {
-            /*string titulo = "";
+            string titulo = "";
             MessageBoxButtons botao = MessageBoxButtons.OK;
-
+            //if(!String.IsNullOrEmpty(tbMatricula.Text)
             if (tbMatricula.Text == "")
             {
                 MessageBox.Show("O CAMPO MATRÍCULA É OBRIGATÓRIO!", titulo, botao, MessageBoxIcon.Error);
                 this.ActiveControl = tbMatricula;
                 return false;
-            }*/
+            }
+
 
             return true;
         }
+        private void Consulta3()
+        {
+            if (obrigatorioMatricula())
+            {
+                id_alps = Convert.ToInt32(tbMatricula.Text.ToString());
+
+                sql = "SELECT ID_USUARIO, DE_USUARIO, ID_ALPS, CD_ESTABELECIMENTO, DE_LOCAL_TRABALHO ";
+                sql += " FROM USUARIO ";
+                sql += " WHERE ID_ALPS = " + id_alps;
+
+                dtSelect = Dados.Consultando(sql);
+
+                MessageBox.Show(dtSelect.Rows[0].ItemArray[1].ToString());
+                MessageBox.Show(dtSelect.Rows[0].ItemArray[2].ToString());
+            }
+        }
+
+        
 
         private void btAssistir_Click(object sender, EventArgs e)
         {
-            //Esconde Janela
-            //this.Hide();
+
+           // Gravar(1, "marco");
+
+            Consulta3();
+
             if (obrigatorioMatricula())
             {
                 switch (idVideo)
                 {
                     case 1:
-                        axWindowsMediaPlayer1.URL = "C:\\videoAlstom\\video1.avi";
+                        axWindowsMediaPlayer1.URL = "C:\\videoAlstom\\video1.mp4";
                         axWindowsMediaPlayer1.Ctlcontrols.play();
                         break;
 
                     case 2:
-                        axWindowsMediaPlayer1.URL = "C:\\videoAlstom\\video2.avi";
+                        axWindowsMediaPlayer1.URL = "C:\\videoAlstom\\video2.mp4";
                         axWindowsMediaPlayer1.Ctlcontrols.play();
                         break;
 
                     case 3:
-                        axWindowsMediaPlayer1.URL = "C:\\videoAlstom\\video3.avi";
+                        axWindowsMediaPlayer1.URL = "C:\\videoAlstom\\video3.mp4";
                         axWindowsMediaPlayer1.Ctlcontrols.play();
                         break;
 
                     case 4:
-                        axWindowsMediaPlayer1.URL = "C:\\videoAlstom\\video4.avi";
+                        axWindowsMediaPlayer1.URL = "C:\\videoAlstom\\video4.mp4";
                         axWindowsMediaPlayer1.Ctlcontrols.play();
                         break;
 
@@ -192,6 +233,7 @@ namespace VideoAlstom
             }
             
         }
+
 
 
 

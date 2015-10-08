@@ -12,77 +12,11 @@ namespace VideoAlstom
 {
     public partial class Home : Form
     {
-        public Boolean flag=true;
-
         public Home()
         {
             InitializeComponent();
         }
 
-        /*player.PlayStateChange += new AxWMPLib._WMPOCXEvents_PlayStateChangeEventHandler(axWindowsMediaPlayer_PlayStateChange);
-
-        private void player_PlayStateChange(object sender, AxWMPLib._WMPOCXEvents_PlayStateChangeEvent e)
-        {
-            // Test the current state of the player and display a message for each state.
-            switch (e.newState)
-            {
-                case 0:    // Undefined
-                    currentStateLabel.Text = "Undefined";
-                    break;
-
-                case 1:    // Stopped
-                    currentStateLabel.Text = "Stopped";
-                    break;
-
-                case 2:    // Paused
-                    currentStateLabel.Text = "Paused";
-                    break;
-
-                case 3:    // Playing
-                    currentStateLabel.Text = "Playing";
-                    break;
-
-                case 4:    // ScanForward
-                    currentStateLabel.Text = "ScanForward";
-                    break;
-
-                case 5:    // ScanReverse
-                    currentStateLabel.Text = "ScanReverse";
-                    break;
-
-                case 6:    // Buffering
-                    currentStateLabel.Text = "Buffering";
-                    break;
-
-                case 7:    // Waiting
-                    currentStateLabel.Text = "Waiting";
-                    break;
-
-                case 8:    // MediaEnded
-                    currentStateLabel.Text = "MediaEnded";
-                    break;
-
-                case 9:    // Transitioning
-                    currentStateLabel.Text = "Transitioning";
-                    break;
-
-                case 10:   // Ready
-                    currentStateLabel.Text = "Ready";
-                    break;
-
-                case 11:   // Reconnecting
-                    currentStateLabel.Text = "Reconnecting";
-                    break;
-
-                case 12:   // Last
-                    currentStateLabel.Text = "Last";
-                    break;
-
-                default:
-                    currentStateLabel.Text = ("Unknown State: " + e.newState.ToString());
-                    break;
-            }
-        }*/
         private void btVideo1_Click(object sender, EventArgs e)
         {
             Login login = new Login(1);
@@ -145,48 +79,6 @@ namespace VideoAlstom
             Login login = new Login(10);
             login.ShowDialog();
         }
-
-
-        public void btInvisible()
-        {
-            btVideo1.Visible = false;
-            btVideo2.Visible = false;
-            btVideo3.Visible = false;
-            btVideo4.Visible = false;
-            btVideo5.Visible = false;
-            btVideo6.Visible = false;
-            btVideo7.Visible = false;
-            btVideo8.Visible = false;
-        }
-
-        private void usuarioBindingNavigatorSaveItem_Click(object sender, EventArgs e)
-        {
-            this.Validate();
-            this.usuarioBindingSource.EndEdit();
-            this.tableAdapterManager.UpdateAll(this.alstomvideoDataSet);
-
-        }
-
-        private void Home_Load(object sender, EventArgs e)
-        {
-            // TODO: esta linha de código carrega dados na tabela 'alstomvideoDataSet.usuario'. Você pode movê-la ou removê-la conforme necessário.
-            this.usuarioTableAdapter.Fill(this.alstomvideoDataSet.usuario);
-
-        }
-
-        private void usuarioDataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-
-        
-   
-
-
-
-
-
-
 
 
     }

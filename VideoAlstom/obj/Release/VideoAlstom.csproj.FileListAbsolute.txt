@@ -12,3 +12,4 @@ C:\Users\DES-MARCO\Documents\Visual Studio 2012\Projects\VideoAlstom\VideoAlstom
 C:\Users\DES-MARCO\Documents\Visual Studio 2012\Projects\VideoAlstom\VideoAlstom\obj\Release\VideoAlstom.csproj.GenerateResource.Cache
 C:\Users\DES-MARCO\Documents\Visual Studio 2012\Projects\VideoAlstom\VideoAlstom\obj\Release\VideoAlstom.exe
 C:\Users\DES-MARCO\Documents\Visual Studio 2012\Projects\VideoAlstom\VideoAlstom\obj\Release\VideoAlstom.pdb
+C:\Users\DES-MARCO\Documents\Visual Studio 2012\Projects\VideoAlstom\VideoAlstom\obj\Release\VideoAlstom.csprojResolveAssemblyReference.cache
