@@ -63,9 +63,59 @@ namespace VideoAlstom.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap ATITUDE_POSITIVA {
+            get {
+                object obj = ResourceManager.GetObject("ATITUDE POSITIVA", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap ATITUDE_POSITIVA1 {
+            get {
+                object obj = ResourceManager.GetObject("ATITUDE POSITIVA1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Browser_fundo_alstom {
             get {
                 object obj = ResourceManager.GetObject("Browser fundo alstom", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Browser_fundo_alstom_2 {
+            get {
+                object obj = ResourceManager.GetObject("Browser fundo alstom 2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap SEGURANÇA_NO_ONIBUS {
+            get {
+                object obj = ResourceManager.GetObject("SEGURANÇA NO ONIBUS", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap SEGURANÇA_NO_TRABALHO {
+            get {
+                object obj = ResourceManager.GetObject("SEGURANÇA NO TRABALHO", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

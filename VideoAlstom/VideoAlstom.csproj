@@ -65,7 +65,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Dados.cs" />
+    <Compile Include="ComandoSql.cs" />
     <Compile Include="Home.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -157,6 +157,21 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Browser fundo alstom.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Browser fundo alstom 2.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ATITUDE POSITIVA.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ATITUDE POSITIVA.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\SEGURANÇA NO TRABALHO.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\SEGURANÇA NO ONIBUS.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
