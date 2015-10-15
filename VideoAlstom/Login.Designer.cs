@@ -44,7 +44,7 @@
             this.btAssistir.Location = new System.Drawing.Point(314, 238);
             this.btAssistir.Name = "btAssistir";
             this.btAssistir.Size = new System.Drawing.Size(200, 75);
-            this.btAssistir.TabIndex = 0;
+            this.btAssistir.TabIndex = 2;
             this.btAssistir.Text = "Assistir";
             this.btAssistir.UseVisualStyleBackColor = false;
             this.btAssistir.Click += new System.EventHandler(this.btAssistir_Click);
@@ -58,6 +58,7 @@
             this.tbMatricula.Size = new System.Drawing.Size(500, 44);
             this.tbMatricula.TabIndex = 1;
             this.tbMatricula.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.tbMatricula.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbMatricula_KeyPress);
             // 
             // label1
             // 
@@ -79,6 +80,10 @@
             this.axWindowsMediaPlayer1.TabIndex = 3;
             this.axWindowsMediaPlayer1.Visible = false;
             this.axWindowsMediaPlayer1.PlayStateChange += new AxWMPLib._WMPOCXEvents_PlayStateChangeEventHandler(this.axWindowsMediaPlayer1_PlayStateChange);
+
+            this.axWindowsMediaPlayer1.DoubleClickEvent += new AxWMPLib._WMPOCXEvents_DoubleClickEventHandler(this.axWindowsMediaPlayer1_DoubleClickEvent);
+  
+     
             // 
             // Login
             // 
