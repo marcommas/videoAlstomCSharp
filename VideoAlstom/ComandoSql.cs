@@ -13,37 +13,7 @@ namespace VideoAlstom
     public class ComandoSql
     {
         //Variavel conexão
-        public string strConexao = ConfigurationManager.ConnectionStrings["ConnectionString"].ConnectionString;
-
-        //Variaveis constantes
-        /*public const string strDelete = "DELETE FROM usuario WHERE id = @id";
-        public const string strInsert = "INSERT INTO usuario VALUES (@id, @de_nome)";
-        public const string strSelect = "SELECT id, de_nome FROM usuario";
-        public const string strUpdate = "UPDATE usuario  SET de_nome = @de_nome";*/
-
-        /*public class usuario
-        {
-            public int id {get; set;}
-            public string de_nome {get; set;}
-        }*/
-
-        /*public void Atualizar(int id, string de_nome)
-        {
-            using (SqlConnection objConexao = new SqlConnection(strConexao))
-            {
-                using (SqlCommand objCommand = new SqlCommand(strUpdate, objConexao))
-                {
-                    objCommand.Parameters.AddWithValue("@id", id);
-                    objCommand.Parameters.AddWithValue("@de_nome", de_nome);
-
-                    objConexao.Open();
-                    objCommand.ExecuteNonQuery();
-
-                    objConexao.Close();
-                }
-
-            }
-        }*/
+        //public string strConexao = ConfigurationManager.ConnectionStrings["ConnectionString"].ConnectionString;
 
         public static DataTable Consulta(string sql)
         {
@@ -102,38 +72,5 @@ namespace VideoAlstom
             }
         }
 
-        /*public void Excluir(int id )
-        {
-            using (SqlConnection objConexao = new SqlConnection(strConexao))
-            {
-                using (SqlCommand objCommand = new SqlCommand(strDelete, objConexao))
-                {
-                    objCommand.Parameters.AddWithValue("@id", id);
-                    objConexao.Open();
-                    objCommand.ExecuteNonQuery();
-                    objConexao.Close();
-                }
-
-            }
-        }
-
-
-        public void Gravar(int id, string de_nome)
-        {
-            using (SqlConnection objConexao = new SqlConnection(strConexao))
-            {
-                using (SqlCommand objCommand = new SqlCommand(strInsert, objConexao))
-                {
-                    objCommand.Parameters.AddWithValue("@id", id);
-                    objCommand.Parameters.AddWithValue("@de_nome", de_nome);
-
-                    objConexao.Open();
-                    objCommand.ExecuteNonQuery();
-
-                    objConexao.Close();
-                }
-
-            }
-        }*/
     }
 }

@@ -26,15 +26,6 @@ namespace VideoAlstom
         public Login(int idVideo)
         {
             InitializeComponent();
-            axWindowsMediaPlayer1.uiMode = "none";
-            axWindowsMediaPlayer1.enableContextMenu = false;
-            axWindowsMediaPlayer1.Ctlenabled = false;
-           
-
-            //Application.AddMessageFilter(new BloquearDoubleClick(this, axWindowsMediaPlayer1));
-            //axWindowsMediaPlayer1 = axWindowsMediaPlayer1.Child as AxWMPLib.AxWindowsMediaPlayer;
-
-            axWindowsMediaPlayer1.DoubleClickEvent += new AxWMPLib._WMPOCXEvents_DoubleClickEventHandler(axWindowsMediaPlayer1_DoubleClickEvent);
 
             this.idVideo = idVideo;
         }
@@ -185,13 +176,6 @@ namespace VideoAlstom
             //QUANDO O VIDEO ESTIVER RODANDO
             if (axWindowsMediaPlayer1.playState == WMPLib.WMPPlayState.wmppsPlaying)
             {
-                //axWindowsMediaPlayer1.fullScreen = true;
-                //_player.uiMode = "none";
-                //axWindowsMediaPlayer1.uiMode = "none";
-                //axWindowsMediaPlayer1.settings.volume = 100;
-                //axWindowsMediaPlayer1.Ctlcontrols.stop();
-                //axWindowsMediaPlayer1.enableContextMenu = false;
-                //axWindowsMediaPlayer1.Ctlenabled = false;
                 if ( !axWindowsMediaPlayer1.fullScreen )
                 {
                     MessageBox.Show("n esta em fullScreen, e agr vai estar").ToString();
@@ -213,95 +197,20 @@ namespace VideoAlstom
 
             if (  axWindowsMediaPlayer1.playState == WMPLib.WMPPlayState.wmppsPaused )
             {
-
-                if ( MessageBox.Show("Video Pausado. Clique aqui para continuar!", "",
-                  MessageBoxButtons.OK , MessageBoxIcon.Information) == DialogResult.OK )
+                //O VIDEO FOI PARADO, PARA CONTINUAR PRECISA CLICAR EM OK
+                if ( MessageBox.Show("Video Parado. Clique aqui para continuar!", "",
+                    MessageBoxButtons.OK , MessageBoxIcon.Information) == DialogResult.OK )
                 {
                     axWindowsMediaPlayer1.Ctlcontrols.play();
                 }
 
-           
 
-                //axWindowsMediaPlayer1.Ctlcontrols.pause();
                 if (!axWindowsMediaPlayer1.fullScreen)
                 {
-                    MessageBox.Show("pause").ToString();
                     axWindowsMediaPlayer1.fullScreen = true;
                 }
             }
 
-            /*if (axWindowsMediaPlayer1.playState == WMPLib.WMPPlayState.wmppsPlaying )
-            {
-
-                MessageBox.Show("wmppsPlaying").ToString();
-
-            }
-
-            if (axWindowsMediaPlayer1.playState == WMPLib.WMPPlayState.wmppsBuffering )
-            {
-
-                MessageBox.Show("wmppsBuffering").ToString();
-                   
-            }
-
-            if (axWindowsMediaPlayer1.playState == WMPLib.WMPPlayState.wmppsLast)
-            {
-
-                MessageBox.Show("wmppsLast").ToString();
-
-            }
-
-            if (axWindowsMediaPlayer1.playState == WMPLib.WMPPlayState.wmppsReady )
-            {
-
-                MessageBox.Show("wmppsReady").ToString();
-
-            }
-
-            if (axWindowsMediaPlayer1.playState == WMPLib.WMPPlayState.wmppsReconnecting )
-            {
-
-                MessageBox.Show("wmppsReconnecting").ToString();
-
-            }
-
-            if (axWindowsMediaPlayer1.playState == WMPLib.WMPPlayState.wmppsScanForward )
-            {
-
-                MessageBox.Show("wmppsScanForward").ToString();
-
-            }
-
-            if (axWindowsMediaPlayer1.playState == WMPLib.WMPPlayState.wmppsScanReverse )
-            {
-
-                MessageBox.Show("wmppsScanReverse").ToString();
-
-            }
-
-            if (axWindowsMediaPlayer1.playState == WMPLib.WMPPlayState.wmppsTransitioning )
-            {
-
-                MessageBox.Show("wmppsTransitioning").ToString();
-
-            }
-
-            if (axWindowsMediaPlayer1.playState == WMPLib.WMPPlayState.wmppsUndefined)
-            {
-
-                MessageBox.Show("wmppsUndefined").ToString();
-
-            }
-
-            if (axWindowsMediaPlayer1.playState == WMPLib.WMPPlayState.wmppsWaiting)
-            {
-
-                MessageBox.Show("wmppsWaiting").ToString();
-
-            }*/
-
-
-        
         }
 
         private void impressaoConf (object sender, PrintPageEventArgs e)
@@ -375,16 +284,6 @@ namespace VideoAlstom
 
             g.DrawString("GUARDE ESTE CUPOM", FonteArial8, Brushes.Blue, 73, 240);
             g.DrawString("VALE COMO ATIVIDADE EXTRA", FonteArial8, Brushes.Blue, 50, 260);
-        }
-
-        private void axWindowsMediaPlayer1_DoubleClickEvent(object sender, _WMPOCXEvents_DoubleClickEvent e)
-        {
-            axWindowsMediaPlayer1.fullScreen = true;
-
-            if (axWindowsMediaPlayer1.fullScreen == false)
-            {
-                axWindowsMediaPlayer1_DoubleClickEvent(sender, null);
-            }
         }
 
 
