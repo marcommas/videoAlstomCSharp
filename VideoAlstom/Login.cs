@@ -42,7 +42,7 @@ namespace VideoAlstom
             MessageBoxButtons botao = MessageBoxButtons.OK;
             if (tbMatricula.Text == "")
             {
-                MessageBox.Show("O CAMPO MATRÍCULA É OBRIGATÓRIO!", titulo, botao, MessageBoxIcon.Error);
+                MessageBox.Show("O CAMPO ALPS É OBRIGATÓRIO!", titulo, botao, MessageBoxIcon.Error);
                 this.ActiveControl = tbMatricula;
                 return false;
             }
