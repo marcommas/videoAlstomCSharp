@@ -99,7 +99,6 @@ namespace VideoAlstom
                     {
                         Inserir(id_usuario, idVideo, id_alps);
                         MostraVideo();
-                        //axWindowsMediaPlayer1.fullScreen = true;
                     }
                     else 
                     {
@@ -196,16 +195,6 @@ namespace VideoAlstom
 
         private void axWindowsMediaPlayer1_PlayStateChange(object sender, _WMPOCXEvents_PlayStateChangeEvent e)
         {
-            //QUANDO O VIDEO ESTIVER RODANDO
-            /*if (axWindowsMediaPlayer1.playState == WMPLib.WMPPlayState.wmppsPlaying)
-            {
-                //MessageBox.Show(Convert.ToBoolean(terceiro).ToString() ).ToString();
-                if ( !axWindowsMediaPlayer1.fullScreen )
-                {
-                    axWindowsMediaPlayer1.fullScreen = true;
-                }
-               
-            }*/
 
             //QUANDO VIDEO FOR PARADO
             if (  axWindowsMediaPlayer1.playState == WMPLib.WMPPlayState.wmppsPaused )
@@ -216,18 +205,11 @@ namespace VideoAlstom
                 {
                     axWindowsMediaPlayer1.Ctlcontrols.play();
                 }
-
-
-                /*if (!axWindowsMediaPlayer1.fullScreen)
-                {
-                    axWindowsMediaPlayer1.fullScreen = true;
-                }*/
             }
 
             //QUANDO O VIDEO ACABAR
             if (axWindowsMediaPlayer1.playState == WMPLib.WMPPlayState.wmppsMediaEnded)
             {
-
                 //IMPRIME 
                 PrintDocument document = new PrintDocument();
                 document.PrintPage += new PrintPageEventHandler(impressaoConf);
@@ -322,7 +304,7 @@ namespace VideoAlstom
             }
             else
             {
-                //g.DrawString("ALPS (Número do crachá): " + id_alps, FonteArial11, Brushes.Blue, 0, 140);
+                //IMPRIME QUANDO FOR TERCEIRO
                 g.DrawString("USUÁRIO: TERCEIRO", FonteArial11, Brushes.Blue, 0, 160);
             }
 

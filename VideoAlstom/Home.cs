@@ -21,9 +21,6 @@ namespace VideoAlstom
         {
             Login login = new Login(1);            
             login.Show();
-
-            this.BringToFront();
-          
         }
 
         private void btVideo2_Click(object sender, EventArgs e)
