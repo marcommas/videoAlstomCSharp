@@ -11,7 +11,6 @@ using System.Drawing.Printing;
 using WMPLib;
 using AxWMPLib;
 using System.Diagnostics;
-
 using System.Data.SqlClient;
 
 namespace VideoAlstom
@@ -22,6 +21,7 @@ namespace VideoAlstom
         private int idVideo, id_alps, id_usuario;
         private string sql, de_usuario, de_local_trabalho;
         private DataTable dtSelect;
+        private bool terceiro = false;
 
         public Login(int idVideo)
         {
@@ -49,6 +49,31 @@ namespace VideoAlstom
 
             return true;
         }
+        
+        // QUANDO CLICADO NO BOTÃO ASSISTIR
+        private void btAssistir_Click(object sender, EventArgs e)
+        {
+            ConsultaUsuario();
+        }
+
+        //QUANDO CLICADO NO LINK DE TERCEIRO
+        private void LbTerceiro_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            //CONFIRME SE VC EH A PESSOA
+            if (MessageBox.Show("OLÁ! CONFIRME SE VOCÊ É UM TERCEIRO", "Confirmação Usuário", MessageBoxButtons.YesNo, MessageBoxIcon.Information) == DialogResult.Yes)
+            {
+                //USUÁRIO 1587 ESTÁ CADASTRADADO COMO TERCEIRO
+                Inserir(1587, idVideo, 0);
+                MostraVideo();
+                terceiro = true;
+            }
+            else
+            {
+                tbMatricula.Clear();
+                this.ActiveControl = tbMatricula;
+            }
+
+        }
 
         private void ConsultaUsuario()
         {
@@ -74,6 +99,7 @@ namespace VideoAlstom
                     {
                         Inserir(id_usuario, idVideo, id_alps);
                         MostraVideo();
+                        //axWindowsMediaPlayer1.fullScreen = true;
                     }
                     else 
                     {
@@ -113,9 +139,9 @@ namespace VideoAlstom
         private void MostraVideo()
         {
             switch (idVideo)
-            {
+            {                  
                 case 1:
-                    axWindowsMediaPlayer1.URL = "C:\\videoAlstom\\video1.mp4";
+                    axWindowsMediaPlayer1.URL = "C:\\videoAlstom\\video1.mp4";                   
                     axWindowsMediaPlayer1.Ctlcontrols.play();
                     break;
 
@@ -135,66 +161,53 @@ namespace VideoAlstom
                     break;
 
                 case 5:
-                    axWindowsMediaPlayer1.URL = "C:\\videoAlstom\\video5.avi";
+                    axWindowsMediaPlayer1.URL = "C:\\videoAlstom\\video5.mp4";
                     axWindowsMediaPlayer1.Ctlcontrols.play();
                     break;
 
                 case 6:
-                    axWindowsMediaPlayer1.URL = "C:\\videoAlstom\\video6.avi";
+                    axWindowsMediaPlayer1.URL = "C:\\videoAlstom\\video6.wmv";
                     axWindowsMediaPlayer1.Ctlcontrols.play();
                     break;
 
                 case 7:
-                    axWindowsMediaPlayer1.URL = "C:\\videoAlstom\\video7.avi";
+                    axWindowsMediaPlayer1.URL = "C:\\videoAlstom\\video7.mp4";
                     axWindowsMediaPlayer1.Ctlcontrols.play();
                     break;
 
                 case 8:
-                    axWindowsMediaPlayer1.URL = "C:\\videoAlstom\\video8.avi";
+                    axWindowsMediaPlayer1.URL = "C:\\videoAlstom\\video8.mp4";
                     axWindowsMediaPlayer1.Ctlcontrols.play();
                     break;
 
                 case 9:
-                    axWindowsMediaPlayer1.URL = "C:\\videoAlstom\\video9.avi";
+                    axWindowsMediaPlayer1.URL = "C:\\videoAlstom\\video9.mp4";
                     axWindowsMediaPlayer1.Ctlcontrols.play();
                     break;
 
                 case 10:
-                    axWindowsMediaPlayer1.URL = "C:\\videoAlstom\\video10.avi";
+                    axWindowsMediaPlayer1.URL = "C:\\videoAlstom\\video10.mp4";
                     axWindowsMediaPlayer1.Ctlcontrols.play();
                     break;
             }
         }
 
-        private void btAssistir_Click(object sender, EventArgs e)
-        {
-            ConsultaUsuario();
-        }
+      
 
         private void axWindowsMediaPlayer1_PlayStateChange(object sender, _WMPOCXEvents_PlayStateChangeEvent e)
         {
             //QUANDO O VIDEO ESTIVER RODANDO
-            if (axWindowsMediaPlayer1.playState == WMPLib.WMPPlayState.wmppsPlaying)
+            /*if (axWindowsMediaPlayer1.playState == WMPLib.WMPPlayState.wmppsPlaying)
             {
+                //MessageBox.Show(Convert.ToBoolean(terceiro).ToString() ).ToString();
                 if ( !axWindowsMediaPlayer1.fullScreen )
                 {
-                    MessageBox.Show("n esta em fullScreen, e agr vai estar").ToString();
                     axWindowsMediaPlayer1.fullScreen = true;
                 }
-            }
-
-            //QUANDO O VIDEO ACABAR
-            if (axWindowsMediaPlayer1.playState == WMPLib.WMPPlayState.wmppsMediaEnded )
-            {
                
-                //IMPRIME 
-                PrintDocument document = new PrintDocument();
-                document.PrintPage += new PrintPageEventHandler(impressaoConf);
-                document.Print();
+            }*/
 
-                this.Hide();
-            }
-
+            //QUANDO VIDEO FOR PARADO
             if (  axWindowsMediaPlayer1.playState == WMPLib.WMPPlayState.wmppsPaused )
             {
                 //O VIDEO FOI PARADO, PARA CONTINUAR PRECISA CLICAR EM OK
@@ -205,10 +218,23 @@ namespace VideoAlstom
                 }
 
 
-                if (!axWindowsMediaPlayer1.fullScreen)
+                /*if (!axWindowsMediaPlayer1.fullScreen)
                 {
                     axWindowsMediaPlayer1.fullScreen = true;
-                }
+                }*/
+            }
+
+            //QUANDO O VIDEO ACABAR
+            if (axWindowsMediaPlayer1.playState == WMPLib.WMPPlayState.wmppsMediaEnded)
+            {
+
+                //IMPRIME 
+                PrintDocument document = new PrintDocument();
+                document.PrintPage += new PrintPageEventHandler(impressaoConf);
+                document.Print();
+
+                this.Hide();
+                
             }
 
         }
@@ -230,7 +256,7 @@ namespace VideoAlstom
 
             //INFORMAÇÕES DO ALUNO
             g.DrawString("SEMANA INTEGRADA DA", FonteArialBlack11, Brushes.Blue, 36, 0);
-            g.DrawString("QUALIDADE 2015", FonteArialBlack11, Brushes.Blue, 60, 20);
+            g.DrawString("QUALIDADE E SIPATMA 2015", FonteArialBlack11, Brushes.Blue, 20, 20);
             g.DrawString("'PREVENÇÃO E ATITUDE'", FonteArialBlack11, Brushes.Blue, 35, 40);
 
 
@@ -238,56 +264,75 @@ namespace VideoAlstom
             switch (idVideo)
             {
                 case 1:
-                    g.DrawString("Video Treinamento: EPCs", FonteArialBlack13, Brushes.Blue, 0, 80);
+                    g.DrawString("Video Treinamento: EPCs", FonteArialBlack11, Brushes.Blue, 0, 80);
+                    g.DrawString("'SEGURANÇA PASSE ADIANTE'", FonteArialBlack11, Brushes.Blue, 0, 100);
                     break;
 
                 case 2:
-                    g.DrawString("Video: Video2", FonteArialBlack13, Brushes.Blue, 0, 80);
+                    g.DrawString("Video Treinamento: EPCs", FonteArialBlack11, Brushes.Blue, 0, 80);
+                    g.DrawString("'PREVENÇÃO DE ACIDENTES'", FonteArialBlack11, Brushes.Blue, 0, 100);
                     break;
 
                 case 3:
-                    g.DrawString("Video: Video3", FonteArialBlack13, Brushes.Blue, 0, 80);
+                    g.DrawString("Video Treinamento: EPCs", FonteArialBlack11, Brushes.Blue, 0, 80);
+                    g.DrawString("'SEGURANÇA NO TRÂNSITO'", FonteArialBlack11, Brushes.Blue, 0, 100);
                     break;
 
                 case 4:
-                    g.DrawString("Video: Video4", FonteArialBlack13, Brushes.Blue, 0, 80);
+                    g.DrawString("Video Treinamento: EPCs", FonteArialBlack11, Brushes.Blue, 0, 80);
+                    g.DrawString("'ATENÇÃO À SINALIZAÇÃO (EPCs)'", FonteArialBlack11, Brushes.Blue, 0, 100);
                     break;
 
                 case 5:
-                    g.DrawString("Video: Video5", FonteArialBlack13, Brushes.Blue, 0, 80);
+                    g.DrawString("Video Treinamento: EPCs", FonteArialBlack11, Brushes.Blue, 0, 80);
+                    g.DrawString("'SEGURANÇA NO TRANSPORTE'", FonteArialBlack11, Brushes.Blue, 0, 100);
                     break;
 
                 case 6:
-                    g.DrawString("Video: Video6", FonteArialBlack13, Brushes.Blue, 0, 80);
+                    g.DrawString("Video Treinamento: Qualidade", FonteArialBlack11, Brushes.Blue, 0, 80);
+                    g.DrawString("'CUSTO DA NÃO QUALIDADE'", FonteArialBlack11, Brushes.Blue, 0, 100);
                     break;
 
                 case 7:
-                    g.DrawString("Video: Video7", FonteArialBlack13, Brushes.Blue, 0, 80);
+                    g.DrawString("Video Treinamento: Qualidade", FonteArialBlack11, Brushes.Blue, 0, 80);
+                    g.DrawString("'FERRAMENTAS DA QUALIDADE'", FonteArialBlack11, Brushes.Blue, 0, 100);
                     break;
 
                 case 8:
-                    g.DrawString("Video: Video8", FonteArialBlack13, Brushes.Blue, 0, 80);
+                    g.DrawString("Video Treinamento: Qualidade", FonteArialBlack11, Brushes.Blue, 0, 80);
+                    g.DrawString("'MELHORIA CONTÍNUA'", FonteArialBlack11, Brushes.Blue, 0, 100);
                     break;
 
                 case 9:
-                    g.DrawString("Video: Video9", FonteArialBlack13, Brushes.Blue, 0, 80);
+                    g.DrawString("Video Treinamento: Qualidade", FonteArialBlack11, Brushes.Blue, 0, 80);
+                    g.DrawString("'LIÇÕES APRENDIDAS'", FonteArialBlack11, Brushes.Blue, 0, 100);
                     break;
 
                 case 10:
-                    g.DrawString("Video: Video10", FonteArialBlack13, Brushes.Blue, 0, 80);
+                    g.DrawString("Video Treinamento: Qualidade", FonteArialBlack11, Brushes.Blue, 0, 80);
+                    g.DrawString("'EXCELÊNCIA OPERACIONAL'", FonteArialBlack11, Brushes.Blue, 0, 100);
                     break;
             }
 
-            g.DrawString("Funcionário: " + id_alps, FonteArial11, Brushes.Blue, 0, 120);
-            g.DrawString(de_usuario, FonteArial11, Brushes.Blue, 0, 140);
-            g.DrawString("Assistido em: " + DateTime.Now, FonteArial11, Brushes.Blue, 0, 160);
+            //SE NÃO FOR TERICEIRO IMPRIME ISSO
+            if (!terceiro)
+            {
+                g.DrawString("ALPS (Número do crachá): " + id_alps, FonteArial11, Brushes.Blue, 0, 140);
+                g.DrawString(de_usuario, FonteArial11, Brushes.Blue, 0, 160);
+            }
+            else
+            {
+                //g.DrawString("ALPS (Número do crachá): " + id_alps, FonteArial11, Brushes.Blue, 0, 140);
+                g.DrawString("USUÁRIO: TERCEIRO", FonteArial11, Brushes.Blue, 0, 160);
+            }
 
-            g.DrawString("GUARDE ESTE CUPOM", FonteArial8, Brushes.Blue, 73, 240);
-            g.DrawString("VALE COMO ATIVIDADE EXTRA", FonteArial8, Brushes.Blue, 50, 260);
+           
+            g.DrawString("Assistido em: " + DateTime.Now, FonteArial11, Brushes.Blue, 0, 180);
+
+            g.DrawString("GUARDE ESTE CUPOM", FonteArial8, Brushes.Blue, 73, 260);
+            g.DrawString("VALE COMO ATIVIDADE EXTRA", FonteArial8, Brushes.Blue, 50, 280);
         }
 
-
     }
-
    
 }

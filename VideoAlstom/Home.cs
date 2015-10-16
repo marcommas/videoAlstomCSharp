@@ -19,67 +19,67 @@ namespace VideoAlstom
 
         private void btVideo1_Click(object sender, EventArgs e)
         {
-            Login login = new Login(1);
-            login.ShowDialog();
+            Login login = new Login(1);            
+            login.Show();
 
+            this.BringToFront();
+          
         }
 
         private void btVideo2_Click(object sender, EventArgs e)
         {
             Login login = new Login(2);
-            login.ShowDialog();
+            login.Show();
         }
 
         private void btVideo3_Click(object sender, EventArgs e)
         {
             Login login = new Login(3);
-            login.ShowDialog();
+            login.Show();
         }
 
         private void btVideo4_Click(object sender, EventArgs e)
         {
             Login login = new Login(4);
-            login.ShowDialog();
+            login.Show();
         }
 
         private void btVideo5_Click(object sender, EventArgs e)
         {
             Login login = new Login(5);
-            login.ShowDialog();
+            login.Show();
 
         }
 
         private void btVideo6_Click(object sender, EventArgs e)
         {
             Login login = new Login(6);
-            login.ShowDialog();
+            login.Show();
         }
 
         private void btVideo7_Click(object sender, EventArgs e)
         {
             Login login = new Login(7);
-            login.ShowDialog();
+            login.Show();
 
         }
 
         private void btVideo8_Click(object sender, EventArgs e)
         {
             Login login = new Login(8);
-            login.ShowDialog();
+            login.Show();
         }
 
         private void btVideo9_Click(object sender, EventArgs e)
         {
             Login login = new Login(9);
-            login.ShowDialog();
+            login.Show();
         }
 
         private void btVideo10_Click(object sender, EventArgs e)
         {
             Login login = new Login(10);
-            login.ShowDialog();
-        }
-
-
+            login.Show();
+        }    
     }
 }

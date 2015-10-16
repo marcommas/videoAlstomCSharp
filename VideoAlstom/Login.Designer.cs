@@ -33,6 +33,8 @@
             this.tbMatricula = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.axWindowsMediaPlayer1 = new AxWMPLib.AxWindowsMediaPlayer();
+            this.label2 = new System.Windows.Forms.Label();
+            this.LbTerceiro = new System.Windows.Forms.LinkLabel();
             ((System.ComponentModel.ISupportInitialize)(this.axWindowsMediaPlayer1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -64,30 +66,54 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(282, 108);
+            this.label1.Location = new System.Drawing.Point(263, 109);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(260, 31);
+            this.label1.Size = new System.Drawing.Size(336, 31);
             this.label1.TabIndex = 2;
-            this.label1.Text = "Digite sua matrícula:";
+            this.label1.Text = "ALPS (Número do Crachá)";
             // 
             // axWindowsMediaPlayer1
             // 
             this.axWindowsMediaPlayer1.Enabled = true;
-            this.axWindowsMediaPlayer1.Location = new System.Drawing.Point(12, 359);
+            this.axWindowsMediaPlayer1.Location = new System.Drawing.Point(12, 23);
             this.axWindowsMediaPlayer1.Name = "axWindowsMediaPlayer1";
             this.axWindowsMediaPlayer1.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("axWindowsMediaPlayer1.OcxState")));
-            this.axWindowsMediaPlayer1.Size = new System.Drawing.Size(779, 83);
+            this.axWindowsMediaPlayer1.Size = new System.Drawing.Size(810, 83);
             this.axWindowsMediaPlayer1.TabIndex = 3;
             this.axWindowsMediaPlayer1.Visible = false;
-            this.axWindowsMediaPlayer1.PlayStateChange += new AxWMPLib._WMPOCXEvents_PlayStateChangeEventHandler(this.axWindowsMediaPlayer1_PlayStateChange);  
-     
+            this.axWindowsMediaPlayer1.PlayStateChange += new AxWMPLib._WMPOCXEvents_PlayStateChangeEventHandler(this.axWindowsMediaPlayer1_PlayStateChange);
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(165, 393);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(335, 33);
+            this.label2.TabIndex = 4;
+            this.label2.Text = "Se você é terceiro clique";
+            // 
+            // LbTerceiro
+            // 
+            this.LbTerceiro.AutoSize = true;
+            this.LbTerceiro.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LbTerceiro.LinkColor = System.Drawing.Color.Blue;
+            this.LbTerceiro.Location = new System.Drawing.Point(506, 382);
+            this.LbTerceiro.Name = "LbTerceiro";
+            this.LbTerceiro.Size = new System.Drawing.Size(154, 55);
+            this.LbTerceiro.TabIndex = 5;
+            this.LbTerceiro.TabStop = true;
+            this.LbTerceiro.Text = "AQUI!";
+            this.LbTerceiro.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.LbTerceiro_LinkClicked);
             // 
             // Login
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Window;
-            this.ClientSize = new System.Drawing.Size(834, 466);
+            this.ClientSize = new System.Drawing.Size(834, 516);
+            this.Controls.Add(this.LbTerceiro);
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.axWindowsMediaPlayer1);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.tbMatricula);
@@ -108,5 +134,7 @@
         private System.Windows.Forms.TextBox tbMatricula;
         private System.Windows.Forms.Label label1;
         private AxWMPLib.AxWindowsMediaPlayer axWindowsMediaPlayer1;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.LinkLabel LbTerceiro;
     }
 }

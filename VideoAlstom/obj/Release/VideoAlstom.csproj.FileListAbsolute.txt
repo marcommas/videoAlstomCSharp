@@ -3,7 +3,6 @@ C:\Users\DES-MARCO\Documents\Visual Studio 2012\Projects\VideoAlstom\VideoAlstom
 C:\Users\DES-MARCO\Documents\Visual Studio 2012\Projects\VideoAlstom\VideoAlstom\bin\Release\VideoAlstom.pdb
 C:\Users\DES-MARCO\Documents\Visual Studio 2012\Projects\VideoAlstom\VideoAlstom\bin\Release\Interop.WMPLib.dll
 C:\Users\DES-MARCO\Documents\Visual Studio 2012\Projects\VideoAlstom\VideoAlstom\bin\Release\AxInterop.WMPLib.dll
-C:\Users\DES-MARCO\Documents\Visual Studio 2012\Projects\VideoAlstom\VideoAlstom\obj\Release\VideoAlstom.csprojResolveAssemblyReference.cache
 C:\Users\DES-MARCO\Documents\Visual Studio 2012\Projects\VideoAlstom\VideoAlstom\obj\Release\Interop.WMPLib.dll
 C:\Users\DES-MARCO\Documents\Visual Studio 2012\Projects\VideoAlstom\VideoAlstom\obj\Release\AxInterop.WMPLib.dll
 C:\Users\DES-MARCO\Documents\Visual Studio 2012\Projects\VideoAlstom\VideoAlstom\obj\Release\VideoAlstom.csproj.ResolveComReference.cache
@@ -13,3 +12,4 @@ C:\Users\DES-MARCO\Documents\Visual Studio 2012\Projects\VideoAlstom\VideoAlstom
 C:\Users\DES-MARCO\Documents\Visual Studio 2012\Projects\VideoAlstom\VideoAlstom\obj\Release\VideoAlstom.csproj.GenerateResource.Cache
 C:\Users\DES-MARCO\Documents\Visual Studio 2012\Projects\VideoAlstom\VideoAlstom\obj\Release\VideoAlstom.exe
 C:\Users\DES-MARCO\Documents\Visual Studio 2012\Projects\VideoAlstom\VideoAlstom\obj\Release\VideoAlstom.pdb
+C:\Users\DES-MARCO\Documents\Visual Studio 2012\Projects\VideoAlstom\VideoAlstom\obj\Release\VideoAlstom.csprojResolveAssemblyReference.cache

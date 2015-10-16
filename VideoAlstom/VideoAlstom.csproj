@@ -172,6 +172,27 @@
   <ItemGroup>
     <None Include="Resources\SEGURANÇA NO ONIBUS.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\CUSTO DA NAO QUALIDADE.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ANALISE DE PROBLEMAS.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\MELHORIA CONTINUA.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\LIÇOES APRENDIDAS.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\EXCELENCIA PROFISSIONAL.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\SEGURANCA PASSE ADIANTE.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\SEGURANÇA NO TRANPORTE.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

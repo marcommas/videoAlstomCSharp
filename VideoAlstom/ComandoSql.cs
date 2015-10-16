@@ -12,8 +12,6 @@ namespace VideoAlstom
 {
     public class ComandoSql
     {
-        //Variavel conexão
-        //public string strConexao = ConfigurationManager.ConnectionStrings["ConnectionString"].ConnectionString;
 
         public static DataTable Consulta(string sql)
         {

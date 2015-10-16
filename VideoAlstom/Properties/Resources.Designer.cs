@@ -63,6 +63,16 @@ namespace VideoAlstom.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap ANALISE_DE_PROBLEMAS {
+            get {
+                object obj = ResourceManager.GetObject("ANALISE DE PROBLEMAS", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap ATITUDE_POSITIVA {
             get {
                 object obj = ResourceManager.GetObject("ATITUDE POSITIVA", resourceCulture);
@@ -103,6 +113,46 @@ namespace VideoAlstom.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap CUSTO_DA_NAO_QUALIDADE {
+            get {
+                object obj = ResourceManager.GetObject("CUSTO DA NAO QUALIDADE", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap EXCELENCIA_PROFISSIONAL {
+            get {
+                object obj = ResourceManager.GetObject("EXCELENCIA PROFISSIONAL", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap LIÇOES_APRENDIDAS {
+            get {
+                object obj = ResourceManager.GetObject("LIÇOES APRENDIDAS", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap MELHORIA_CONTINUA {
+            get {
+                object obj = ResourceManager.GetObject("MELHORIA CONTINUA", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap SEGURANÇA_NO_ONIBUS {
             get {
                 object obj = ResourceManager.GetObject("SEGURANÇA NO ONIBUS", resourceCulture);
@@ -116,6 +166,26 @@ namespace VideoAlstom.Properties {
         internal static System.Drawing.Bitmap SEGURANÇA_NO_TRABALHO {
             get {
                 object obj = ResourceManager.GetObject("SEGURANÇA NO TRABALHO", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap SEGURANÇA_NO_TRANPORTE {
+            get {
+                object obj = ResourceManager.GetObject("SEGURANÇA NO TRANPORTE", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap SEGURANCA_PASSE_ADIANTE {
+            get {
+                object obj = ResourceManager.GetObject("SEGURANCA PASSE ADIANTE", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
