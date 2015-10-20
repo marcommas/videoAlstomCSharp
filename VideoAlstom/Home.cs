@@ -77,6 +77,52 @@ namespace VideoAlstom
         {
             Login login = new Login(10);
             login.Show();
-        }    
+        }
+
+
+        private bool obrigatorioSenha()
+        {
+            string titulo = "";
+            MessageBoxButtons botao = MessageBoxButtons.OK;
+            if (tbSair.Text == "")
+            {
+                MessageBox.Show("O CAMPO SENHA É OBRIGATÓRIO!", titulo, botao, MessageBoxIcon.Error);
+                this.ActiveControl = tbSair;
+                return false;
+            }
+
+            return true;
+        }
+
+
+        private void btSair_Click(object sender, EventArgs e)
+        {
+            pnSair.Visible = true;
+            pnSair.Location = new Point((this.Width / 2) - (pnSair.Width / 2), (this.Height / 2) - (pnSair.Height / 2));
+            tbSair.Focus();
+        }
+
+        private void btfecharsair_Click(object sender, EventArgs e)
+        {
+            pnSair.Visible = false;
+        }
+
+        private void btFechaPrograma_Click(object sender, EventArgs e)
+        {
+
+            if (obrigatorioSenha())
+            {
+                if( tbSair.Text.ToString() == "master123" ){
+                    Application.Exit();
+                }
+                else{
+                    MessageBox.Show("A SENHA ESTÁ INCORRETA!", "", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    tbSair.Clear();
+                    this.ActiveControl = tbSair;
+                }
+            }
+        }
+
+
     }
 }

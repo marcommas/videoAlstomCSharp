@@ -39,6 +39,12 @@
             this.btVideo3 = new System.Windows.Forms.Button();
             this.btVideo9 = new System.Windows.Forms.Button();
             this.btVideo10 = new System.Windows.Forms.Button();
+            this.btSair = new System.Windows.Forms.Button();
+            this.pnSair = new System.Windows.Forms.Panel();
+            this.btfecharsair = new System.Windows.Forms.Button();
+            this.btFechaPrograma = new System.Windows.Forms.Button();
+            this.tbSair = new System.Windows.Forms.TextBox();
+            this.pnSair.SuspendLayout();
             this.SuspendLayout();
             // 
             // btVideo1
@@ -189,6 +195,69 @@
             this.btVideo10.UseVisualStyleBackColor = false;
             this.btVideo10.Click += new System.EventHandler(this.btVideo10_Click);
             // 
+            // btSair
+            // 
+            this.btSair.BackColor = System.Drawing.Color.Transparent;
+            this.btSair.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.btSair.FlatAppearance.BorderSize = 0;
+            this.btSair.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btSair.Location = new System.Drawing.Point(1015, 807);
+            this.btSair.Name = "btSair";
+            this.btSair.Size = new System.Drawing.Size(245, 120);
+            this.btSair.TabIndex = 12;
+            this.btSair.UseVisualStyleBackColor = false;
+            this.btSair.Click += new System.EventHandler(this.btSair_Click);
+            // 
+            // pnSair
+            // 
+            this.pnSair.BackColor = System.Drawing.SystemColors.ScrollBar;
+            this.pnSair.Controls.Add(this.btfecharsair);
+            this.pnSair.Controls.Add(this.btFechaPrograma);
+            this.pnSair.Controls.Add(this.tbSair);
+            this.pnSair.Location = new System.Drawing.Point(12, 12);
+            this.pnSair.Name = "pnSair";
+            this.pnSair.Size = new System.Drawing.Size(315, 179);
+            this.pnSair.TabIndex = 13;
+            this.pnSair.Visible = false;
+            // 
+            // btfecharsair
+            // 
+            this.btfecharsair.BackColor = System.Drawing.Color.Brown;
+            this.btfecharsair.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btfecharsair.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btfecharsair.ForeColor = System.Drawing.Color.Black;
+            this.btfecharsair.Location = new System.Drawing.Point(261, 12);
+            this.btfecharsair.Name = "btfecharsair";
+            this.btfecharsair.Size = new System.Drawing.Size(41, 33);
+            this.btfecharsair.TabIndex = 2;
+            this.btfecharsair.Text = "X";
+            this.btfecharsair.UseVisualStyleBackColor = false;
+            this.btfecharsair.Click += new System.EventHandler(this.btfecharsair_Click);
+            // 
+            // btFechaPrograma
+            // 
+            this.btFechaPrograma.BackColor = System.Drawing.Color.Brown;
+            this.btFechaPrograma.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btFechaPrograma.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btFechaPrograma.Location = new System.Drawing.Point(79, 109);
+            this.btFechaPrograma.Name = "btFechaPrograma";
+            this.btFechaPrograma.Size = new System.Drawing.Size(155, 48);
+            this.btFechaPrograma.TabIndex = 1;
+            this.btFechaPrograma.Text = "Sair";
+            this.btFechaPrograma.UseVisualStyleBackColor = false;
+            this.btFechaPrograma.Click += new System.EventHandler(this.btFechaPrograma_Click);
+            // 
+            // tbSair
+            // 
+            this.tbSair.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbSair.Location = new System.Drawing.Point(15, 51);
+            this.tbSair.MaxLength = 10;
+            this.tbSair.Name = "tbSair";
+            this.tbSair.Size = new System.Drawing.Size(280, 40);
+            this.tbSair.TabIndex = 0;
+            this.tbSair.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.tbSair.UseSystemPasswordChar = true;
+            // 
             // Home
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -197,6 +266,8 @@
             this.BackgroundImage = global::VideoAlstom.Properties.Resources.Browser_fundo_alstom_2;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1258, 927);
+            this.Controls.Add(this.pnSair);
+            this.Controls.Add(this.btSair);
             this.Controls.Add(this.btVideo10);
             this.Controls.Add(this.btVideo9);
             this.Controls.Add(this.btVideo3);
@@ -213,6 +284,8 @@
             this.Name = "Home";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.pnSair.ResumeLayout(false);
+            this.pnSair.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -229,6 +302,11 @@
         private System.Windows.Forms.Button btVideo9;
         private System.Windows.Forms.Button btVideo10;
         private System.Windows.Forms.Button btVideo1;
+        private System.Windows.Forms.Button btSair;
+        private System.Windows.Forms.Panel pnSair;
+        private System.Windows.Forms.Button btFechaPrograma;
+        private System.Windows.Forms.TextBox tbSair;
+        private System.Windows.Forms.Button btfecharsair;
 
     }
 }

@@ -315,6 +315,7 @@ namespace VideoAlstom
             g.DrawString("VALE COMO ATIVIDADE EXTRA", FonteArial8, Brushes.Blue, 50, 280);
         }
 
+
     }
    
 }
