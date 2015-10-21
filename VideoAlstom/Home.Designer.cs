@@ -198,12 +198,13 @@
             // btSair
             // 
             this.btSair.BackColor = System.Drawing.Color.Transparent;
-            this.btSair.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.btSair.BackgroundImage = global::VideoAlstom.Properties.Resources.fechar;
+            this.btSair.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btSair.FlatAppearance.BorderSize = 0;
             this.btSair.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btSair.Location = new System.Drawing.Point(1015, 807);
+            this.btSair.Location = new System.Drawing.Point(1152, 12);
             this.btSair.Name = "btSair";
-            this.btSair.Size = new System.Drawing.Size(245, 120);
+            this.btSair.Size = new System.Drawing.Size(94, 96);
             this.btSair.TabIndex = 12;
             this.btSair.UseVisualStyleBackColor = false;
             this.btSair.Click += new System.EventHandler(this.btSair_Click);
